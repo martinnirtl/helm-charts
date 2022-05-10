@@ -1,7 +1,0 @@
-spec:
-  project: default
-  destination:
-    server: https://kubernetes.default.svc
-  # source:
-  #   repoURL: https://github.com/martinnirtl/mart-cluster
-  #   targetRevision: master

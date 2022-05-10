@@ -1,7 +1,0 @@
-apiVersion: v2
-name: dynatrace-operator-argo
-description: Argo-specific wrapper for Dynatrace operator helm chart
-
-type: application
-version: 0.1.1
-appVersion: "0.5.1"
