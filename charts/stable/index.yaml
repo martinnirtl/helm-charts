@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  dynatrace-operator:
+  - apiVersion: v2
+    appVersion: 0.6.0
+    created: "2022-05-10T11:15:57.182008+02:00"
+    description: Convenience wrapper chart for Dynatrace operator helm chart
+    digest: 21626a211223554eb2295f41764f83877b8e4d0f28fd553cec16d5a520616aa1
+    name: dynatrace-operator
+    type: application
+    urls:
+    - dynatrace-operator-0.6.0.tgz
+    version: 0.6.0
+generated: "2022-05-10T11:15:57.180354+02:00"

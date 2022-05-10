@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ .Release.Name }}-crds
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd.argoproj.io/hook: PreSync
+spec:
+  destination:
+    server: {{ .Values.spec.destination.server }}
+    namespace: dynatrace
+  project: {{ .Values.spec.project }}
+  source:
+    repoURL: https://github.com/martinnirtl/mart-cluster.git
+    targetRevision: master
+    path: lib/dynatrace-operator/crds
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true

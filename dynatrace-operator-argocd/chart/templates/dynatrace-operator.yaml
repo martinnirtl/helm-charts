@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ .Release.Name }}-main
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd.argoproj.io/hook: Sync
+spec:
+  destination:
+    server: {{ .Values.spec.destination.server }}
+    namespace: dynatrace
+  project: {{ .Values.spec.project }}
+  source:
+    repoURL: https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/master/config/helm/repos/stable
+    chart: dynatrace-operator
+    targetRevision: 0.5.1
+    helm:
+      parameters:
+        - name: autoCreateSecret
+          value: "false"
+  syncPolicy:
+    automated: {}
+

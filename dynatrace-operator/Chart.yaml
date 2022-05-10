@@ -1,0 +1,7 @@
+apiVersion: v2
+name: dynatrace-operator
+description: Convenience wrapper chart for Dynatrace operator helm chart
+
+type: application
+version: 0.6.0
+appVersion: "0.6.0"
