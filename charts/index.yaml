@@ -3,7 +3,7 @@ entries:
   dynatrace-operator:
   - apiVersion: v2
     appVersion: 0.6.0
-    created: "2022-05-10T13:10:28.321826+02:00"
+    created: "2022-05-10T13:19:34.2202+02:00"
     description: Convenience wrapper chart for Dynatrace operator helm chart
     digest: 5ddff36032e267dc58172cea7e26265ab060dfee7b1c96d783008bc32bf4b443
     name: dynatrace-operator
@@ -14,13 +14,13 @@ entries:
   dynatrace-operator-argocd:
   - apiVersion: v2
     appVersion: 0.6.0
-    created: "2022-05-10T13:10:28.322231+02:00"
+    created: "2022-05-10T13:19:34.22111+02:00"
     description: Argo-specific wrapper for Dynatrace operator Helm chart meant to
       be used with ApplicationSets
-    digest: b0bd09792460288cc8261205842b2c19d6432cf5b5f721dbfd084c684645f4ba
+    digest: 4b504ec1a1d8d25b25d62e8d8c842846cf99a5e65e9e82aa67e37cfad4e150a6
     name: dynatrace-operator-argocd
     type: application
     urls:
     - dynatrace-operator-argocd-0.6.0.tgz
     version: 0.6.0
-generated: "2022-05-10T13:10:28.319733+02:00"
+generated: "2022-05-10T13:19:34.218378+02:00"
