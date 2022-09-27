@@ -1,0 +1,174 @@
+dynatrace-operator:
+  installCRD: true
+
+  operator:
+    apparmor: true
+    requests:
+      cpu: 50m
+      memory: 64Mi
+    limits:
+      cpu: 100m
+      memory: 128Mi
+
+  webhook:
+    apparmor: true
+    requests:
+      cpu: 300m
+      memory: 128Mi
+    limits:
+      cpu: 300m
+      memory: 128Mi
+    highAvailability: true
+
+  csidriver:
+    enabled: true
+
+    tolerations:
+      - effect: NoSchedule
+        key: node-role.kubernetes.io/master
+        operator: Exists
+      - effect: NoSchedule
+        key: node-role.kubernetes.io/control-plane
+        operator: Exists
+      - effect: NoSchedule
+        key: CriticalAddonsOnly
+        operator: Exists
+
+    requests:
+      cpu: 300m
+      memory: 100Mi
+    limits:
+      cpu: 300m
+      memory: 100Mi
+
+  additionalPermissions:
+    pvcMonitoring: true
+
+dynatrace-dynakube:
+  dynakube:
+    apiVersion: dynatrace.com/v1beta1
+    kind: DynaKube
+    metadata:
+      annotations:
+        feature.dynatrace.com/automatic-kubernetes-api-monitoring: "true"
+        feature.dynatrace.com/activegate-apparmor: "true"
+        feature.dynatrace.com/activegate-authtoken: "true"
+      name: dynakube
+    spec:
+      apiUrl: https://xxxxxxxx.live.dynatrace.com/api
+      tokens: dynakube
+
+      skipCertCheck: false
+      networkZone: foo
+
+      oneAgent:
+        cloudNativeFullStack:
+          autoUpdate: true
+
+          args:
+          - --set-host-group=foo
+
+          tolerations:
+          - effect: NoSchedule
+            key: CriticalAddonsOnly
+            operator: Exists
+
+          oneAgentResources:
+            requests:
+              cpu: 100m
+              memory: 512Mi
+            limits:
+              cpu: 300m
+              memory: 1.5Gi
+
+      activeGate:
+        replicas: 1
+        group: foo
+
+        capabilities:
+          - routing
+          - kubernetes-monitoring
+          - dynatrace-api
+
+        resources:
+          requests:
+            cpu: 150m
+            memory: 250M
+          limits:
+            cpu: 300m
+            memory: 1G
+
+  secret:
+    enabled: false
+    name: dynakube
+
+    annotations:
+      avp.kubernetes.io/path: "secret/data/dynatrace"
+
+    stringData:
+      apiToken: <apiToken>
+      dataIngestToken: <dataIngestToken>
+
+  # multi: 
+  # - dynakube:
+  #     apiVersion: dynatrace.com/v1beta1
+  #     kind: DynaKube
+  #     metadata:
+  #       annotations:
+  #         feature.dynatrace.com/automatic-kubernetes-api-monitoring: "true"
+  #         feature.dynatrace.com/activegate-apparmor: "true"
+  #         feature.dynatrace.com/activegate-authtoken: "true"
+  #       name: dynakube
+  #     spec:
+  #       apiUrl: https://xxxxxxxx.live.dynatrace.com/api
+  #       tokens: dynakube
+
+  #       skipCertCheck: false
+  #       networkZone: foo
+
+  #       oneAgent:
+  #         cloudNativeFullStack:
+  #           autoUpdate: true
+
+  #           args:
+  #           - --set-host-group=foo
+
+  #           tolerations:
+  #           - effect: NoSchedule
+  #             key: CriticalAddonsOnly
+  #             operator: Exists
+
+  #           oneAgentResources:
+  #             requests:
+  #               cpu: 100m
+  #               memory: 512Mi
+  #             limits:
+  #               cpu: 300m
+  #               memory: 1.5Gi
+
+  #       activeGate:
+  #         replicas: 1
+  #         group: foo
+
+  #         capabilities:
+  #           - routing
+  #           - kubernetes-monitoring
+  #           - dynatrace-api
+
+  #         resources:
+  #           requests:
+  #             cpu: 150m
+  #             memory: 250M
+  #           limits:
+  #             cpu: 300m
+  #             memory: 1G
+  #   secret:
+  #     enabled: false
+  #     name: dynakube
+
+  #     annotations:
+  #       avp.kubernetes.io/path: "secret/data/dynatrace"
+
+  #     stringData:
+  #       apiToken: <apiToken>
+  #       dataIngestToken: <dataIngestToken>

@@ -1,0 +1,9 @@
+dependencies:
+- name: dynatrace-operator
+  repository: https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/master/config/helm/repos/stable
+  version: 0.8.2
+- name: dynatrace-dynakube
+  repository: https://raw.githubusercontent.com/martinnirtl/helm-charts/master/charts
+  version: 0.8.2
+digest: sha256:0369a12ea1efdaa482ee4e74ffda9408e004e5300a5105ee88161750aad06109
+generated: "2022-09-27T20:57:28.846961+02:00"

@@ -1,0 +1,15 @@
+apiVersion: v2
+name: dynakube
+description: Deploy the Dynatrace Operator including one or more DynaKube CRs
+
+type: application
+version: 0.8.2
+appVersion: "0.8.2"
+
+dependencies:
+- name: dynatrace-operator
+  version: 0.8.2
+  repository: https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/master/config/helm/repos/stable
+- name: dynatrace-dynakube
+  version: 0.8.2
+  repository: https://raw.githubusercontent.com/martinnirtl/helm-charts/master/charts
