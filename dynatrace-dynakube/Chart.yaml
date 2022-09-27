@@ -1,0 +1,7 @@
+apiVersion: v2
+name: dynatrace-dynakube
+description: Deploy one or more DynaKube CRs via Helm
+
+type: application
+version: 0.8.2
+appVersion: "0.8.2"

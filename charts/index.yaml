@@ -1,26 +1,14 @@
 apiVersion: v1
 entries:
-  dynatrace-operator:
+  dynatrace-dynakube:
   - apiVersion: v2
-    appVersion: 0.6.0
-    created: "2022-05-10T15:18:25.114833+02:00"
-    description: Convenience wrapper chart for Dynatrace operator helm chart
-    digest: 5ddff36032e267dc58172cea7e26265ab060dfee7b1c96d783008bc32bf4b443
-    name: dynatrace-operator
+    appVersion: 0.8.2
+    created: "2022-09-27T20:39:01.78083+02:00"
+    description: Deploy one or more DynaKube CRs via Helm
+    digest: 1248e27651303953ac372087d9aef98249177418fa915f28bb038979ba57acc3
+    name: dynatrace-dynakube
     type: application
     urls:
-    - dynatrace-operator-0.6.0.tgz
-    version: 0.6.0
-  dynatrace-operator-argocd:
-  - apiVersion: v2
-    appVersion: 0.6.0
-    created: "2022-05-10T15:18:25.115262+02:00"
-    description: Argo-specific wrapper for Dynatrace operator Helm chart meant to
-      be used with ApplicationSets
-    digest: dff876f790e82b8e325ebbc3a4d59baa23b90c1bdf49edf8a344e6adaef31442
-    name: dynatrace-operator-argocd
-    type: application
-    urls:
-    - dynatrace-operator-argocd-0.6.0.tgz
-    version: 0.6.0
-generated: "2022-05-10T15:18:25.10512+02:00"
+    - dynatrace-dynakube-0.8.2.tgz
+    version: 0.8.2
+generated: "2022-09-27T20:39:01.779393+02:00"

@@ -1,7 +1,0 @@
-apiVersion: v2
-name: dynatrace-operator-argocd
-description: Argo-specific wrapper for Dynatrace operator Helm chart meant to be used with ApplicationSets
-
-type: application
-version: 0.6.0
-appVersion: "0.6.0"

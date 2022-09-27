@@ -1,0 +1,8 @@
+{{- range .Values.multi }}
+---
+{{- toYaml .dynakube }}
+{{- if default false .secret.enabled }}
+---
+{{- include "dynakube.secret" . }}
+{{- end }}
+{{- end }}
