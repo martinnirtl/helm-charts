@@ -9,7 +9,7 @@ Available charts:
 Run the following command to add the chart repo:
 
 ```
-helm repo add martinnirtl https://raw.githubusercontent.com/martinnirtl/helm-charts/master/charts
+helm repo add martinnirtl https://raw.githubusercontent.com/martinnirtl/helm-charts/main/charts
 ```
 
 Afterwards, update your repositories:
