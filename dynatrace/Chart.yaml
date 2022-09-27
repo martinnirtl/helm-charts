@@ -1,5 +1,5 @@
 apiVersion: v2
-name: dynakube
+name: dynatrace
 description: Deploy the Dynatrace Operator including one or more DynaKube CRs
 
 type: application
