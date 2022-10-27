@@ -2,17 +2,51 @@ apiVersion: v1
 entries:
   dynatrace:
   - apiVersion: v2
+    appVersion: 0.9.1
+    created: "2022-10-27T21:40:15.200352+02:00"
+    dependencies:
+    - name: dynatrace-operator
+      repository: https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/master/config/helm/repos/stable
+      version: 0.9.1
+    - name: dynatrace-dynakube
+      repository: https://raw.githubusercontent.com/martinnirtl/helm-charts/master/charts
+      version: 1.0.0
+    description: Deploy the Dynatrace Operator including one or more DynaKube CRs
+    digest: d70fa559f01377d1c261a6ed46fdccad4822f18986ac61492811d49b99f8db40
+    name: dynatrace
+    type: application
+    urls:
+    - dynatrace-0.9.1.tgz
+    version: 0.9.1
+  - apiVersion: v2
+    appVersion: 0.9.0
+    created: "2022-10-27T21:40:15.197993+02:00"
+    dependencies:
+    - name: dynatrace-operator
+      repository: https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/master/config/helm/repos/stable
+      version: 0.9.0
+    - name: dynatrace-dynakube
+      repository: https://raw.githubusercontent.com/martinnirtl/helm-charts/master/charts
+      version: 1.0.0
+    description: Deploy the Dynatrace Operator including one or more DynaKube CRs
+    digest: 071b4f550ba6704b987a13a6104349231087bfca5930cf7adaa7f2f254b6e89c
+    name: dynatrace
+    type: application
+    urls:
+    - dynatrace-0.9.0.tgz
+    version: 0.9.0
+  - apiVersion: v2
     appVersion: 0.8.2
-    created: "2022-10-27T21:33:21.462099+02:00"
+    created: "2022-10-27T21:40:15.194941+02:00"
     dependencies:
     - name: dynatrace-operator
       repository: https://raw.githubusercontent.com/Dynatrace/dynatrace-operator/master/config/helm/repos/stable
       version: 0.8.2
     - name: dynatrace-dynakube
       repository: https://raw.githubusercontent.com/martinnirtl/helm-charts/master/charts
-      version: 0.8.2
+      version: 1.0.0
     description: Deploy the Dynatrace Operator including one or more DynaKube CRs
-    digest: 18810e09b8d2982c79a93eef8cc25b093347656e80d3b1fa744a6f55390fc069
+    digest: d2b1a7111d75b1aa9f71c174603bfe46b7304e463a929c625931d24315f51bc4
     name: dynatrace
     type: application
     urls:
@@ -21,22 +55,12 @@ entries:
   dynatrace-dynakube:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-10-27T21:33:21.463292+02:00"
+    created: "2022-10-27T21:40:15.200723+02:00"
     description: Deploy one or more DynaKube CRs via Helm
-    digest: 6204c3fa6e0c4dd56ec39eb1a26cb702cdad4e03cb51c53bf258e3f8cb6b1dfd
+    digest: f357213db8271eb5e4555962805e77c5b2ab89a77ba6bf7939eb46ae75bf358e
     name: dynatrace-dynakube
     type: application
     urls:
     - dynatrace-dynakube-1.0.0.tgz
     version: 1.0.0
-  - apiVersion: v2
-    appVersion: 0.8.2
-    created: "2022-10-27T21:33:21.462725+02:00"
-    description: Deploy one or more DynaKube CRs via Helm
-    digest: 1248e27651303953ac372087d9aef98249177418fa915f28bb038979ba57acc3
-    name: dynatrace-dynakube
-    type: application
-    urls:
-    - dynatrace-dynakube-0.8.2.tgz
-    version: 0.8.2
-generated: "2022-10-27T21:33:21.448531+02:00"
+generated: "2022-10-27T21:40:15.192375+02:00"
